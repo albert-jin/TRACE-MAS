@@ -231,7 +231,7 @@ bash scripts/run_bbeh.sh mini
   title        = {TRACE-MAS: Trustworthy Routing and Assessment for Configuration-Evolved Multi-Agent Systems},
   author       = {Jin, Weiqiang},
   year         = {2026},
-  note         = {Manuscript}
+  note         = {The first conference of IPMC [2026]}
 }
 ```
 
@@ -244,6 +244,6 @@ credit. Commercial use is not permitted.
 ## Acknowledgment
 
 TRACE-MAS builds on configuration-based multi-agent system components and
-benchmark adapters inspired by EvoMAS. The method-specific additions in this
+benchmark adapters inspired by EvoMAS: https://github.com/amazon-science/EvoMAS. We thanks for their contribution. The method-specific additions in this
 repository are the report-routing layer, trace records, verifier prompts,
 TRACE-style scoring, and bounded self-revision operators.
