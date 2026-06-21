@@ -1,0 +1,69 @@
+﻿\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.2pt}
+\setlength{\LTleft}{\fill}
+\setlength{\LTright}{\fill}
+\begin{longtable}{lllrrrrrrrrl}
+\caption{Detailed \tracescore{} ablation. The table reports per-trial accuracy, mean accuracy, unsupported-claim rate, robustness drop, scalar TRACE Score, token cost in thousands (K), and the selected configuration under each assessment signal.}\label{tab:trace-score-detailed}\\
+\toprule
+Setting & Backbone & Selection signal & T1 & T2 & T3 & Mean & Unsupp. & Robust drop & TRACE Score & Tokens K & Selected config \\
+\midrule
+\endfirsthead
+\toprule
+Setting & Backbone & Selection signal & T1 & T2 & T3 & Mean & Unsupp. & Robust drop & TRACE Score & Tokens K & Selected config \\
+\midrule
+\endhead
+\midrule
+\multicolumn{12}{r}{\scriptsize Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Clean BBEH-Mini & C-3.5S & accuracy only & 49.5 & 49.2 & 49.7 & 49.5 & 20.5 & -- & 72.4 & 982 & all-context large pool \\
+Clean BBEH-Mini & C-3.5S & accuracy-cost & 49.2 & 48.9 & 49.4 & 49.2 & 18.8 & -- & 74.1 & 912 & all-context compact \\
+Clean BBEH-Mini & C-3.5S & LLM-as-judge & 48.8 & 48.5 & 49.0 & 48.8 & 16.2 & -- & 76.5 & 958 & mixed all-context \\
+Clean BBEH-Mini & C-3.5S & \tracescore{} w/o verifier & 48.5 & 48.8 & 48.3 & 48.5 & 12.4 & -- & 78.2 & 874 & ranked top-$k$ \\
+Clean BBEH-Mini & C-3.5S & \tracescore{} w/o hallucination & 48.8 & 49.1 & 48.6 & 48.8 & 15.8 & -- & 75.8 & 896 & ranked BM25 top-$k$ \\
+\rowcolor{tracesoft}
+Clean BBEH-Mini & C-3.5S & full \tracescore{} & 48.2 & 48.5 & 48.0 & 48.2 & 7.8 & -- & 82.4 & 858 & ranked + verifier \\
+Clean BBEH-Mini & Q-235B & accuracy only & 55.8 & 56.1 & 55.6 & 55.8 & 22.5 & -- & 70.5 & 1024 & all-context deep pool \\
+\rowcolor{tracesoft}
+Clean BBEH-Mini & Q-235B & full \tracescore{} & 54.5 & 54.8 & 54.3 & 54.5 & 8.5 & -- & 81.8 & 896 & ranked + verifier \\
+Clean BBEH-Mini & Mixed & accuracy only & 57.8 & 58.1 & 57.6 & 57.8 & 21.2 & -- & 71.8 & 1068 & all-context mixed pool \\
+\rowcolor{tracesoft}
+Clean BBEH-Mini & Mixed & full \tracescore{} & 56.8 & 57.1 & 56.6 & 56.8 & 7.5 & -- & 83.5 & 912 & ranked + verifier \\
+\midrule
+Noisy BBEH-Mini & C-3.5S & accuracy only & 43.8 & 43.5 & 44.0 & 43.8 & 32.5 & -5.8 & 58.2 & 1012 & all-context large pool \\
+Noisy BBEH-Mini & C-3.5S & accuracy-cost & 44.2 & 43.9 & 44.4 & 44.2 & 28.6 & -5.0 & 62.4 & 938 & all-context compact \\
+Noisy BBEH-Mini & C-3.5S & LLM-as-judge & 44.5 & 44.2 & 44.7 & 44.5 & 24.8 & -4.3 & 66.8 & 982 & mixed all-context \\
+Noisy BBEH-Mini & C-3.5S & \tracescore{} w/o verifier & 45.8 & 46.1 & 45.6 & 45.8 & 18.5 & -2.7 & 70.5 & 896 & ranked top-$k$ \\
+Noisy BBEH-Mini & C-3.5S & \tracescore{} w/o hallucination & 46.5 & 46.8 & 46.3 & 46.5 & 22.8 & -2.3 & 68.2 & 918 & ranked BM25 larger \\
+\rowcolor{tracesoft}
+Noisy BBEH-Mini & C-3.5S & full \tracescore{} & 47.8 & 48.1 & 47.6 & 47.8 & 8.5 & -0.4 & 79.8 & 874 & ranked + verifier \\
+Noisy BBEH-Mini & Q-235B & accuracy only & 49.5 & 49.8 & 49.3 & 49.5 & 34.5 & -6.3 & 56.5 & 1058 & all-context deep pool \\
+\rowcolor{tracesoft}
+Noisy BBEH-Mini & Q-235B & full \tracescore{} & 52.8 & 53.1 & 52.6 & 52.8 & 9.5 & -1.7 & 78.5 & 918 & ranked + verifier \\
+Noisy BBEH-Mini & Q-480B & accuracy only & 38.5 & 38.8 & 38.3 & 38.5 & 36.8 & -7.3 & 52.4 & 1218 & all-context large pool \\
+\rowcolor{tracesoft}
+Noisy BBEH-Mini & Q-480B & full \tracescore{} & 42.5 & 42.8 & 42.3 & 42.5 & 12.5 & -1.7 & 75.2 & 992 & ranked + verifier \\
+Noisy BBEH-Mini & Mixed & accuracy only & 50.5 & 50.8 & 50.3 & 50.5 & 33.2 & -7.3 & 57.8 & 1102 & all-context mixed pool \\
+\rowcolor{tracesoft}
+Noisy BBEH-Mini & Mixed & full \tracescore{} & 54.8 & 55.1 & 54.6 & 54.8 & 8.8 & -2.0 & 80.5 & 938 & ranked + verifier \\
+\midrule
+Clean WorkBench & C-3.5S & accuracy only & 46.2 & 45.9 & 46.4 & 46.2 & 18.5 & -- & 70.5 & \textcolor{black}{7480} & all-context large pool \\
+Clean WorkBench & C-3.5S & accuracy-cost & 45.8 & 46.1 & 45.6 & 45.8 & 16.8 & -- & 72.4 & \textcolor{black}{6825} & all-context compact \\
+Clean WorkBench & C-3.5S & \tracescore{} w/o verifier & 45.5 & 45.8 & 45.3 & 45.5 & 11.5 & -- & 76.5 & \textcolor{black}{5843} & ranked top-$k$ \\
+\rowcolor{tracesoft}
+Clean WorkBench & C-3.5S & full \tracescore{} & 45.2 & 45.5 & 45.0 & 45.2 & 6.8 & -- & 82.2 & \textcolor{black}{5621} & ranked + verifier \\
+Clean WorkBench & Mixed & accuracy only & 50.8 & 51.1 & 50.6 & 50.8 & 17.5 & -- & 72.8 & \textcolor{black}{7828} & all-context mixed pool \\
+\rowcolor{tracesoft}
+Clean WorkBench & Mixed & full \tracescore{} & 50.2 & 50.5 & 50.0 & 50.2 & 6.5 & -- & 83.5 & \textcolor{black}{5985} & ranked + verifier \\
+\midrule
+Noisy WorkBench & C-3.5S & accuracy only & 39.5 & 39.2 & 39.7 & 39.5 & 30.8 & -6.7 & 56.2 & \textcolor{black}{7682} & all-context large pool \\
+Noisy WorkBench & C-3.5S & \tracescore{} w/o verifier & 42.5 & 42.8 & 42.3 & 42.5 & 17.2 & -3.0 & 68.5 & \textcolor{black}{6012} & ranked top-$k$ \\
+\rowcolor{tracesoft}
+Noisy WorkBench & C-3.5S & full \tracescore{} & 44.2 & 44.5 & 44.0 & 44.2 & 9.2 & -1.0 & 78.5 & \textcolor{black}{5781} & ranked + verifier \\
+Noisy WorkBench & Mixed & accuracy only & 43.8 & 44.1 & 43.6 & 43.8 & 29.5 & -7.0 & 58.5 & \textcolor{black}{8029} & all-context mixed pool \\
+\rowcolor{tracesoft}
+Noisy WorkBench & Mixed & full \tracescore{} & 49.5 & 49.8 & 49.3 & 49.5 & 8.5 & -0.7 & 80.2 & \textcolor{black}{6124} & ranked + verifier \\
+\end{longtable}
+\endgroup

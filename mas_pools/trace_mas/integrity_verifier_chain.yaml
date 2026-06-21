@@ -1,0 +1,44 @@
+﻿name: TRACE_MAS_integrity_verifier_chain
+description: TRACE-MAS chain that exposes only direct-parent reports before a verifier and final aggregator.
+backend: smolagents
+agents:
+  solver:
+    id: solver
+    role: worker
+    agent_type: CodeAgent
+    model_id: bedrock:qwen.qwen3-235b-a22b-2507-v1:0
+    prompt: worker
+    tools: []
+    max_tokens: 4096
+    temperature: 0.5
+    device: null
+  verifier:
+    id: verifier
+    role: verifier
+    agent_type: CodeAgent
+    model_id: bedrock:global.anthropic.claude-sonnet-4-5-20250929-v1:0
+    prompt: trace_integrity_verifier
+    tools: []
+    max_tokens: 4096
+    temperature: 0.2
+    device: null
+  aggregator:
+    id: aggregator
+    role: aggregator
+    agent_type: CodeAgent
+    model_id: bedrock:global.anthropic.claude-sonnet-4-5-20250929-v1:0
+    prompt: aggregator
+    tools: []
+    max_tokens: 4096
+    temperature: 0.2
+    device: null
+topology:
+  reports_to:
+    solver: [verifier]
+    verifier: [aggregator]
+execution:
+  parallel_workers: false
+  timeout: 600
+  max_retries: 0
+  context_routing: direct_parents
+

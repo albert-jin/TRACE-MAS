@@ -1,0 +1,59 @@
+﻿\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.3pt}
+\setlength{\LTleft}{\fill}
+\setlength{\LTright}{\fill}
+\begin{longtable}{lllrrrrrrrr}
+\caption{Detailed self-revision ablation. The table reports operator groups, revision rounds, backbone settings, three trials, mean accuracy, unsupported claims, noisy exposure, acceptance rate, and token cost in thousands (K).}\label{tab:self-revision-detailed}\\
+\toprule
+Dataset & Revision setting & Rounds & T1 & T2 & T3 & Mean & Unsupp. & Noisy exp. & Accept & Tokens K \\
+\midrule
+\endfirsthead
+\toprule
+Dataset & Revision setting & Rounds & T1 & T2 & T3 & Mean & Unsupp. & Noisy exp. & Accept & Tokens K \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{\scriptsize Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Noisy-BBEH-Mini & no revision & 0 & 41.6 & 41.3 & 41.8 & 41.6 & 36.8 & 29.4 & -- & 968 \\
+Noisy-BBEH-Mini & routing only & 1 & 44.8 & 45.1 & 44.6 & 44.8 & 24.5 & 15.2 & 68.5 & 1052 \\
+Noisy-BBEH-Mini & routing only & 3 & 45.5 & 45.8 & 45.3 & 45.5 & 21.8 & 13.5 & 54.2 & 1148 \\
+Noisy-BBEH-Mini & routing only & 5 & 45.8 & 46.1 & 45.6 & 45.8 & 20.5 & 12.8 & 42.2 & 1284 \\
+Noisy-BBEH-Mini & context budget only & 1 & 42.5 & 42.8 & 42.3 & 42.5 & 34.2 & 25.8 & 62.4 & 1012 \\
+Noisy-BBEH-Mini & context budget only & 3 & 43.2 & 43.5 & 43.0 & 43.2 & 31.5 & 22.5 & 48.5 & 1086 \\
+Noisy-BBEH-Mini & verifier insertion only & 1 & 43.5 & 43.8 & 43.3 & 43.5 & 28.5 & 26.8 & 65.8 & 1048 \\
+Noisy-BBEH-Mini & verifier insertion only & 3 & 44.5 & 44.8 & 44.3 & 44.5 & 22.4 & 24.5 & 50.2 & 1156 \\
+Noisy-BBEH-Mini & trace score only & 1 & 42.0 & 42.3 & 41.8 & 42.0 & 35.5 & 28.2 & 58.5 & 996 \\
+Noisy-BBEH-Mini & trace score only & 3 & 42.8 & 43.1 & 42.6 & 42.8 & 33.8 & 26.8 & 44.8 & 1058 \\
+Noisy-BBEH-Mini & routing + verifier & 1 & 46.2 & 46.5 & 46.0 & 46.2 & 16.8 & 12.5 & 66.2 & 1124 \\
+Noisy-BBEH-Mini & routing + verifier & 3 & 47.2 & 47.5 & 47.0 & 47.2 & 13.2 & 9.8 & 52.5 & 1268 \\
+Noisy-BBEH-Mini & routing + verifier & 5 & 47.5 & 47.8 & 47.3 & 47.5 & 11.8 & 9.2 & 40.8 & 1432 \\
+\rowcolor{tracesoft}
+Noisy-BBEH-Mini & full \method{} & 1 & 46.5 & 46.8 & 46.3 & 46.5 & 15.2 & 11.5 & 65.5 & 1182 \\
+\rowcolor{tracesoft}
+Noisy-BBEH-Mini & full \method{} & 3 & 47.8 & 48.1 & 47.6 & 47.8 & 8.5 & 7.0 & 52.8 & 1356 \\
+\rowcolor{tracesoft}
+Noisy-BBEH-Mini & full \method{} & 5 & 48.0 & 48.3 & 47.8 & 48.0 & 7.8 & 6.5 & 38.5 & 1548 \\
+\midrule
+BBEH-Mini clean & no revision & 0 & 49.1 & 48.8 & 49.3 & 49.1 & 19.4 & -- & -- & 952 \\
+BBEH-Mini clean & routing only & 3 & 49.8 & 50.1 & 49.6 & 49.8 & 14.2 & -- & 56.8 & 1135 \\
+BBEH-Mini clean & verifier only & 3 & 49.2 & 49.5 & 49.0 & 49.2 & 10.5 & -- & 52.5 & 1142 \\
+BBEH-Mini clean & routing + verifier & 3 & 49.5 & 49.8 & 49.3 & 49.5 & 7.8 & -- & 54.2 & 1245 \\
+\rowcolor{tracesoft}
+BBEH-Mini clean & full \method{} & 3 & 49.2 & 49.5 & 49.0 & 49.2 & 5.2 & -- & 55.0 & 1328 \\
+\midrule
+Noisy-WorkBench & no revision & 0 & 38.2 & 37.9 & 38.4 & 38.2 & 34.5 & 28.6 & -- & \textcolor{black}{7349} \\
+Noisy-WorkBench & routing only & 3 & 41.8 & 42.1 & 41.6 & 41.8 & 20.5 & 14.2 & 52.5 & \textcolor{black}{8240} \\
+Noisy-WorkBench & verifier only & 3 & 40.5 & 40.8 & 40.3 & 40.5 & 18.5 & 25.8 & 49.8 & \textcolor{black}{8314} \\
+Noisy-WorkBench & routing + verifier & 3 & 43.5 & 43.8 & 43.3 & 43.5 & 11.2 & 10.5 & 50.5 & \textcolor{black}{8946} \\
+\rowcolor{tracesoft}
+Noisy-WorkBench & full \method{} & 3 & 44.2 & 44.5 & 44.0 & 44.2 & 9.2 & 8.0 & 51.2 & \textcolor{black}{9428} \\
+\midrule
+Noisy-BBEH-Mini & full \method{}, Q-235B & 3 & 52.8 & 53.1 & 52.6 & 52.8 & 9.5 & 7.8 & 55.2 & 1402 \\
+Noisy-BBEH-Mini & full \method{}, Q-480B & 3 & 42.5 & 42.8 & 42.3 & 42.5 & 12.5 & 9.5 & 48.5 & 1488 \\
+Noisy-BBEH-Mini & full \method{}, Mixed & 3 & 54.8 & 55.1 & 54.6 & 54.8 & 8.8 & 7.2 & 54.5 & 1448 \\
+\end{longtable}
+\endgroup

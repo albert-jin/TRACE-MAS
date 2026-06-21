@@ -1,0 +1,56 @@
+﻿name: TRACE_MAS_ranked_majority_vote
+description: TRACE-MAS majority-vote MAS with rank-aware top-k context routing for downstream aggregation.
+backend: smolagents
+agents:
+  worker1:
+    id: worker1
+    role: worker
+    agent_type: CodeAgent
+    model_id: bedrock:qwen.qwen3-235b-a22b-2507-v1:0
+    prompt: worker
+    tools: []
+    max_tokens: 4096
+    temperature: 0.5
+    device: null
+  worker2:
+    id: worker2
+    role: worker
+    agent_type: CodeAgent
+    model_id: bedrock:qwen.qwen3-235b-a22b-2507-v1:0
+    prompt: worker
+    tools: []
+    max_tokens: 4096
+    temperature: 0.5
+    device: null
+  worker3:
+    id: worker3
+    role: worker
+    agent_type: CodeAgent
+    model_id: bedrock:qwen.qwen3-235b-a22b-2507-v1:0
+    prompt: worker
+    tools: []
+    max_tokens: 4096
+    temperature: 0.5
+    device: null
+  aggregator:
+    id: aggregator
+    role: aggregator
+    agent_type: CodeAgent
+    model_id: bedrock:global.anthropic.claude-sonnet-4-5-20250929-v1:0
+    prompt: aggregator
+    tools: []
+    max_tokens: 4096
+    temperature: 0.3
+    device: null
+topology:
+  reports_to:
+    worker1: [aggregator]
+    worker2: [aggregator]
+    worker3: [aggregator]
+execution:
+  parallel_workers: true
+  timeout: 600
+  max_retries: 0
+  context_routing: topk_similarity
+  context_top_k: 2
+

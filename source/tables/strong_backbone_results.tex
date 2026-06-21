@@ -1,0 +1,56 @@
+﻿\begingroup
+\scriptsize
+\setlength{\tabcolsep}{1.9pt}
+\setlength{\LTleft}{\fill}
+\setlength{\LTright}{\fill}
+\begin{longtable}{lllrrrrrrrrrr}
+\caption{Detailed strong-backbone robustness. The table compares GPT-5.5, Claude Opus 4.6, ranked routing, full \method{}, and strong-pool LLM-selection across Noisy-BBEH-Mini, clean BBEH-Mini, and Noisy-WorkBench. Token costs are reported in thousands (K), and latency is measured as end-to-end seconds.}\label{tab:strong-backbone-results-detailed}\\
+\toprule
+Dataset & Method & Backbone & T1 & T2 & T3 & Mean & Unsupp. & Cascade & Noisy & Evid. & Tokens K & Latency s \\
+\midrule
+\endfirsthead
+\toprule
+Dataset & Method & Backbone & T1 & T2 & T3 & Mean & Unsupp. & Cascade & Noisy & Evid. & Tokens K & Latency s \\
+\midrule
+\endhead
+\midrule
+\multicolumn{13}{r}{\scriptsize Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Noisy-BBEH & Single Agent & GPT-5.5 & 62.5 & 62.8 & 62.3 & 62.5 & 18.5 & 35.2 & 28.5 & 58.5 & \textcolor{black}{2855} & \textcolor{black}{1987} \\
+Noisy-BBEH & Single Agent & Opus 4.6 & 64.2 & 64.5 & 64.0 & 64.2 & 16.8 & 32.5 & 26.8 & 60.5 & \textcolor{black}{3129} & \textcolor{black}{2243} \\
+Noisy-BBEH & Vanilla all-context & GPT-5.5 & 56.5 & 56.8 & 56.3 & 56.5 & 28.5 & 48.5 & 22.5 & 62.5 & \textcolor{black}{1248} & \textcolor{black}{897} \\
+Noisy-BBEH & Vanilla all-context & Opus 4.6 & 58.2 & 58.5 & 58.0 & 58.2 & 26.8 & 45.2 & 21.2 & 64.8 & \textcolor{black}{1382} & \textcolor{black}{1021} \\
+Noisy-BBEH & ranked top-$k$ & GPT-5.5 & 60.5 & 60.8 & 60.3 & 60.5 & 15.2 & 28.5 & 12.5 & 74.5 & 982 & 712 \\
+Noisy-BBEH & ranked top-$k$ & Opus 4.6 & 62.2 & 62.5 & 62.0 & 62.2 & 13.8 & 25.8 & 11.2 & 76.8 & \textcolor{black}{1095} & 820 \\
+Noisy-BBEH & \method{} routing + verifier & GPT-5.5 & 63.8 & 64.1 & 63.6 & 63.8 & 8.5 & 16.5 & 6.8 & \textcolor{black}{82.8} & \textcolor{black}{1286} & 942 \\
+Noisy-BBEH & \method{} routing + verifier & Opus 4.6 & 65.5 & 65.8 & 65.3 & 65.5 & 7.2 & 14.2 & 5.8 & \textcolor{black}{84.0} & \textcolor{black}{1417} & \textcolor{black}{1085} \\
+\rowcolor{tracesoft}
+Noisy-BBEH & \method{} Full & GPT-5.5 & 65.2 & 65.5 & 65.0 & 65.2 & 5.2 & 10.2 & 4.8 & \textcolor{black}{86.0} & \textcolor{black}{1481} & \textcolor{black}{1129} \\
+\rowcolor{tracesoft}
+Noisy-BBEH & \method{} Full & Opus 4.6 & 67.8 & 68.1 & 67.6 & 67.8 & 4.5 & 8.5 & 4.0 & \textcolor{black}{88.7} & \textcolor{black}{1622} & \textcolor{black}{1287} \\
+\rowcolor{tracesoft}
+Noisy-BBEH & \method{} LLM-selection & Mixed strong & 70.5 & 70.8 & 70.3 & 70.5 & 4.2 & 7.8 & 3.5 & \textcolor{black}{89.6} & \textcolor{black}{1562} & \textcolor{black}{1212} \\
+\midrule
+Clean BBEH & Single Agent & GPT-5.5 & 68.5 & 68.8 & 68.3 & 68.5 & 12.5 & -- & -- & \textcolor{black}{82.7} & \textcolor{black}{2522} & \textcolor{black}{1625} \\
+Clean BBEH & Single Agent & Opus 4.6 & 70.2 & 70.5 & 70.0 & 70.2 & 11.2 & -- & -- & \textcolor{black}{84.4} & \textcolor{black}{2850} & \textcolor{black}{1863} \\
+Clean BBEH & Vanilla all-context & GPT-5.5 & 64.5 & 64.8 & 64.3 & 64.5 & 22.5 & -- & -- & \textcolor{black}{72.9} & \textcolor{black}{1187} & \textcolor{black}{783} \\
+Clean BBEH & Vanilla all-context & Opus 4.6 & 66.2 & 66.5 & 66.0 & 66.2 & 21.2 & -- & -- & 74.2 & \textcolor{black}{1326} & \textcolor{black}{924} \\
+Clean BBEH & \method{} Full & GPT-5.5 & 67.8 & 68.1 & 67.6 & 67.8 & 5.8 & -- & -- & 88.5 & \textcolor{black}{1429} & \textcolor{black}{1020} \\
+Clean BBEH & \method{} Full & Opus 4.6 & 70.0 & 70.3 & 69.8 & 70.0 & 5.2 & -- & -- & 89.8 & \textcolor{black}{1566} & \textcolor{black}{1189} \\
+Clean BBEH & \method{} LLM-selection & Mixed strong & 72.5 & 72.8 & 72.3 & 72.5 & 4.8 & -- & -- & 91.2 & \textcolor{black}{1490} & \textcolor{black}{1113} \\
+\midrule
+Noisy-WorkBench & Single Agent & GPT-5.5 & 58.5 & 58.8 & 58.3 & 58.5 & 22.5 & 38.5 & 32.5 & 62.5 & 5411 & 8238 \\
+Noisy-WorkBench & Single Agent & Opus 4.6 & 60.2 & 60.5 & 60.0 & 60.2 & 20.8 & 35.8 & 30.2 & 64.8 & 6039 & 9424 \\
+Noisy-WorkBench & Vanilla all-context & GPT-5.5 & 52.5 & 52.8 & 52.3 & 52.5 & 32.5 & 52.5 & 26.8 & -- & 9742 & 31248 \\
+Noisy-WorkBench & Vanilla all-context & Opus 4.6 & 54.2 & 54.5 & 54.0 & 54.2 & 30.8 & 49.8 & 25.2 & -- & 10713 & 35182 \\
+Noisy-WorkBench & ranked top-$k$ & GPT-5.5 & 56.8 & 57.1 & 56.6 & 56.8 & 18.5 & 32.5 & 15.8 & -- & 7445 & 26837 \\
+\rowcolor{tracesoft}
+Noisy-WorkBench & \method{} Full & GPT-5.5 & 61.2 & 61.5 & 61.0 & 61.2 & 8.5 & 15.2 & 7.2 & -- & 9823 & 36274 \\
+\rowcolor{tracesoft}
+Noisy-WorkBench & \method{} Full & Opus 4.6 & 63.5 & 63.8 & 63.3 & 63.5 & 7.2 & 12.8 & 6.2 & -- & 10849 & 40528 \\
+\rowcolor{tracesoft}
+Noisy-WorkBench & \method{} LLM-selection & Mixed strong & 66.2 & 66.5 & 66.0 & 66.2 & 6.5 & 11.5 & 5.8 & -- & 10368 & 38456 \\
+\end{longtable}
+\endgroup

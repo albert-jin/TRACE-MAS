@@ -1,0 +1,44 @@
+﻿\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.0pt}
+\setlength{\LTleft}{\fill}
+\setlength{\LTright}{\fill}
+\begin{longtable}{llrrrrrrrrrrr}
+\caption{Detailed verifier sensitivity. The table compares no verifier, heuristic verifier, cheap LLM verifier, and strong LLM verifier across noisy BBEH, clean BBEH, Noisy-WorkBench, and cheap-verifier cross-backbone settings. Agree H and Agree S denote agreement with human labels and strong-verifier labels; token columns are reported in thousands (K).}\label{tab:verifier-sensitivity-detailed}\\
+\toprule
+Setting & Verifier & T1 & T2 & T3 & Mean & Unsupp. & Agree H & Agree S & Tokens K & Verif. K & FP & FN \\
+\midrule
+\endfirsthead
+\toprule
+Setting & Verifier & T1 & T2 & T3 & Mean & Unsupp. & Agree H & Agree S & Tokens K & Verif. K & FP & FN \\
+\midrule
+\endhead
+\midrule
+\multicolumn{13}{r}{\scriptsize Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Noisy-BBEH & no verifier & 41.6 & 41.3 & 41.8 & 41.6 & 36.8 & -- & -- & 968 & 6 & -- & -- \\
+Noisy-BBEH & heuristic & 43.5 & 43.8 & 43.3 & 43.5 & 18.8 & 78.5 & 72.8 & 1012 & 44 & 14.2 & 12.5 \\
+Noisy-BBEH & cheap Q-235B & 46.5 & 46.8 & 46.3 & 46.5 & 12.5 & 91.2 & 84.6 & 1108 & 140 & 8.5 & 6.8 \\
+Noisy-BBEH & cheap C-3.5S & 47.2 & 47.5 & 47.0 & 47.2 & 10.8 & 93.5 & 89.2 & 1152 & 184 & 6.2 & 5.5 \\
+\rowcolor{tracesoft}
+Noisy-BBEH & strong C-4S & 47.8 & 48.1 & 47.6 & 47.8 & 8.5 & 96.6 & 100.0 & 1356 & 388 & 3.2 & 3.8 \\
+Noisy-BBEH & strong C-4.5S & 48.2 & 48.5 & 48.0 & 48.2 & 7.8 & 97.2 & -- & 1428 & 460 & 2.8 & 3.2 \\
+\midrule
+Clean BBEH & no verifier & 49.1 & 48.8 & 49.3 & 49.1 & 19.4 & -- & -- & 952 & 4 & -- & -- \\
+Clean BBEH & heuristic & 49.2 & 49.5 & 49.0 & 49.2 & 12.5 & 82.5 & -- & 996 & 44 & 11.8 & -- \\
+Clean BBEH & cheap Q-235B & 49.0 & 49.3 & 48.8 & 49.0 & 8.2 & 92.8 & -- & 1092 & 140 & 7.5 & -- \\
+Clean BBEH & strong C-4S & 49.2 & 49.5 & 49.0 & 49.2 & 5.2 & 96.8 & -- & 1328 & 376 & 3.5 & -- \\
+\midrule
+Noisy-WorkBench & no verifier & 38.2 & 37.9 & 38.4 & 38.2 & 34.5 & -- & -- & \textcolor{black}{7343} & 8 & -- & -- \\
+Noisy-WorkBench & heuristic & 40.5 & 40.8 & 40.3 & 40.5 & 22.5 & 75.5 & -- & \textcolor{black}{7421} & \textcolor{black}{89} & -- & 15.2 \\
+Noisy-WorkBench & cheap Q-235B & 42.8 & 43.1 & 42.6 & 42.8 & 14.8 & 89.8 & -- & \textcolor{black}{7584} & \textcolor{black}{247} & -- & 8.5 \\
+\rowcolor{tracesoft}
+Noisy-WorkBench & strong C-4S & 44.2 & 44.5 & 44.0 & 44.2 & 9.2 & 95.8 & -- & \textcolor{black}{9421} & \textcolor{black}{2082} & -- & 4.5 \\
+\midrule
+Noisy-BBEH & cheap Q-235B on Q-235B & 52.0 & 52.3 & 51.8 & 52.0 & 13.2 & 90.5 & -- & 1142 & \textcolor{black}{144} & -- & -- \\
+Noisy-BBEH & cheap Q-235B on Q-480B & 41.0 & 41.3 & 40.8 & 41.0 & 16.5 & 88.8 & -- & 1188 & \textcolor{black}{147} & -- & -- \\
+Noisy-BBEH & cheap Q-235B on Mixed & 54.0 & 54.3 & 53.8 & 54.0 & 11.8 & 91.8 & -- & 1158 & \textcolor{black}{147} & -- & -- \\
+\end{longtable}
+\endgroup
