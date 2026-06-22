@@ -1,5 +1,7 @@
 # TRACE-MAS
 
+## This is an anonymous GitHub repository for double-blind IPMC conference submission; all potential author-identifying information has been redacted.
+
 **Trustworthy Routing and Assessment for Configuration-Evolved Multi-Agent Systems**
 
 TRACE-MAS is a research prototype for building multi-agent reasoning systems
@@ -229,7 +231,7 @@ bash scripts/run_bbeh.sh mini
 ```bibtex
 @misc{jin2026tracemas,
   title        = {TRACE-MAS: Trustworthy Routing and Assessment for Configuration-Evolved Multi-Agent Systems},
-  author       = {Jin, Weiqiang},
+  author       = {Anonymous Authors.},
   year         = {2026},
   note         = {The first conference of IPMC [2026]}
 }
