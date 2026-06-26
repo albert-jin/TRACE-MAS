@@ -229,7 +229,7 @@ bash scripts/run_bbeh.sh mini
 ## Citation
 
 ```bibtex
-@misc{jin2026tracemas,
+@misc{anonymous2026tracemas,
   title        = {TRACE-MAS: Trustworthy Routing and Assessment for Configuration-Evolved Multi-Agent Systems},
   author       = {Anonymous Authors.},
   year         = {2026},
